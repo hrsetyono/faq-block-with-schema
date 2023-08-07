@@ -1,0 +1,122 @@
+.wp-block-px-faq
+  position: relative
+
+  &.is-style-default
+    display: flex
+    flex-direction: column
+    
+    + .wp-block-px-faq.is-style-default
+      margin-top: -1px
+
+    &::before,
+    &::after
+      content: ""
+      display: block
+      border-top: 1px solid
+      transition: all .25s ease-in-out
+      opacity: .3
+    &:hover::before,
+    &:hover::after
+      opacity: .75
+
+  &.is-style-boxed
+    border: 1px solid rgba(black, .1)
+    border-radius: 4px
+    transition: all .25s ease-in-out
+    box-shadow: 0 10px 30px rgba(black, .08)
+
+  &.is-style-always-open
+    border-radius: 4px
+
+.wp-block-px-faq__question
+  display: flex
+  align-items: center
+  position: relative
+  cursor: pointer
+  padding: 1rem 0
+  padding-right: 3rem
+
+  line-height: 1.25
+  font-weight: 700
+  list-style: none
+  user-select: none
+  transition: all .25s ease-in-out
+
+  .has-background &
+    padding: 1rem
+  .is-style-boxed &
+    padding: 1rem
+  .is-style-always-open &
+    pointer-events: none
+
+  &:active
+    transform: translateY(1px)
+    transition: none
+
+  &::-webkit-details-marker
+    display: none
+  &::marker
+    display: none
+    font-size: 0
+
+  &::after
+    content: "+"
+    position: absolute
+    top: 50%
+    right: 0
+    transform: translateY(-50%)
+    transition: all .25s ease-in-out
+
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    margin-left: auto
+    margin-right: 0.5rem
+    width: 1.5rem
+    height: 1.5rem
+    border-radius: 50%
+
+    font-size: 1.25rem
+    font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace
+    line-height: 1
+
+    [open] &
+      content: "-"
+
+    .is-style-always-open &
+      display: none
+    .wp-block-px-faq:focus-within &
+      background-color: rgba(black, .1)
+  
+  &:hover::after
+    background-color: rgba(black, .1)
+
+  // &::after
+  //   content: ""
+  //   display: inline-block
+  //   background: url('./chevron-down.svg') no-repeat center center
+  //   background-size: 1rem auto
+  //   margin-left: auto
+  //   margin-right: 0.5rem
+  //   width: 1rem
+  //   height: 1rem
+  //   font-family: monospace
+  //   line-height: 1
+  //   [open] &
+  //     transform: rotate(180deg)
+
+
+div.wp-block-px-faq__answer
+  padding: 0 0 1rem
+  font-size: 1rem
+  opacity: .75
+
+  .is-style-boxed &,
+  .has-background &
+    padding: 0 1rem 1rem
+
+  p
+    margin: 0
+
+  p + p
+    margin-top: 1rem

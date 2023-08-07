@@ -1,0 +1,91 @@
+div.wp-block-px-faq
+  position: relative
+  border: 1px solid
+  border-left: none
+  border-right: none
+
+  &.is-style-default,
+  &:not([class*="is-style-"])
+    + .wp-block-px-faq.is-style-default,
+    + .wp-block-px-faq:not([class*="is-style-"])
+      margin-top: -1px
+
+  &.is-style-boxed
+    border: 1px solid rgba(black, .1)
+
+  &.is-style-always-open
+    border: none
+
+  .wp-block
+    margin-top: 0
+    p
+      margin: 0
+
+  .dashicons-before
+    display: inline-flex
+    justify-content: center
+    align-items: center
+    cursor: pointer
+
+    position: absolute
+    top: 0.625rem
+    right: 2.5rem
+    padding: 0.25rem
+    width: 1.5rem
+    height: 1.5rem
+
+    color: inherit
+    border-radius: 4px
+
+    &:hover
+      background-color: rgba(black, .1)
+    &:active
+      transition: none
+      transform: translateY(1px)
+
+.wp-block-px-faq__question
+  .is-selected &,
+  .is-typing &,
+  .has-child-selected &,
+  [open] &
+    &::after
+      content: "-"
+
+  .is-style-always-open &
+    pointer-events: auto
+
+div.wp-block-px-faq__answer
+  overflow: hidden
+  visibility: hidden
+  height: 0
+  padding: 0
+
+  .has-background &
+    padding-top: 0
+    padding-bottom: 0
+
+  [data-type="px/faq"].is-selected &,
+  [data-type="px/faq"].is-typing &,
+  [data-type="px/faq"].has-child-selected &,
+  [open] &
+    visibility: visible
+    height: auto
+    padding-bottom: 1rem
+
+  .is-style-boxed &
+    padding: 0
+    padding-right: 1rem
+    padding-left: 1rem
+
+  .wp-block-px-faq.is-style-always-open &
+    visibility: visible
+    height: auto
+    padding: 0
+
+  .is-style-always-open.has-background &
+    padding: 1rem
+    padding-top: 0
+  p
+    margin: 0
+  p + p
+    margin-top: 0.5rem

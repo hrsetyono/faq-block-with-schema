@@ -1,0 +1,87 @@
+div.wp-block-px-faq {
+  position: relative;
+  border: 1px solid;
+  border-left: none;
+  border-right: none;
+}
+div.wp-block-px-faq.is-style-default + .wp-block-px-faq.is-style-default,
+div.wp-block-px-faq.is-style-default + .wp-block-px-faq:not([class*=is-style-]), div.wp-block-px-faq:not([class*=is-style-]) + .wp-block-px-faq.is-style-default,
+div.wp-block-px-faq:not([class*=is-style-]) + .wp-block-px-faq:not([class*=is-style-]) {
+  margin-top: -1px;
+}
+div.wp-block-px-faq.is-style-boxed {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+div.wp-block-px-faq.is-style-always-open {
+  border: none;
+}
+div.wp-block-px-faq .wp-block {
+  margin-top: 0;
+}
+div.wp-block-px-faq .wp-block p {
+  margin: 0;
+}
+div.wp-block-px-faq .dashicons-before {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: absolute;
+  top: 0.625rem;
+  right: 2.5rem;
+  padding: 0.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: inherit;
+  border-radius: 4px;
+}
+div.wp-block-px-faq .dashicons-before:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+div.wp-block-px-faq .dashicons-before:active {
+  transition: none;
+  transform: translateY(1px);
+}
+
+.is-selected .wp-block-px-faq__question::after, .is-typing .wp-block-px-faq__question::after, .has-child-selected .wp-block-px-faq__question::after, [open] .wp-block-px-faq__question::after {
+  content: "-";
+}
+.is-style-always-open .wp-block-px-faq__question {
+  pointer-events: auto;
+}
+
+div.wp-block-px-faq__answer {
+  overflow: hidden;
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+}
+.has-background div.wp-block-px-faq__answer {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+[data-type="px/faq"].is-selected div.wp-block-px-faq__answer, [data-type="px/faq"].is-typing div.wp-block-px-faq__answer, [data-type="px/faq"].has-child-selected div.wp-block-px-faq__answer, [open] div.wp-block-px-faq__answer {
+  visibility: visible;
+  height: auto;
+  padding-bottom: 1rem;
+}
+.is-style-boxed div.wp-block-px-faq__answer {
+  padding: 0;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+.wp-block-px-faq.is-style-always-open div.wp-block-px-faq__answer {
+  visibility: visible;
+  height: auto;
+  padding: 0;
+}
+.is-style-always-open.has-background div.wp-block-px-faq__answer {
+  padding: 1rem;
+  padding-top: 0;
+}
+div.wp-block-px-faq__answer p {
+  margin: 0;
+}
+div.wp-block-px-faq__answer p + p {
+  margin-top: 0.5rem;
+}

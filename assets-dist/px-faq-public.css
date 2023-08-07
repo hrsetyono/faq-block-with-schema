@@ -1,0 +1,109 @@
+.wp-block-px-faq {
+  position: relative;
+}
+.wp-block-px-faq.is-style-default {
+  display: flex;
+  flex-direction: column;
+}
+.wp-block-px-faq.is-style-default + .wp-block-px-faq.is-style-default {
+  margin-top: -1px;
+}
+.wp-block-px-faq.is-style-default::before, .wp-block-px-faq.is-style-default::after {
+  content: "";
+  display: block;
+  border-top: 1px solid;
+  transition: all 0.25s ease-in-out;
+  opacity: 0.3;
+}
+.wp-block-px-faq.is-style-default:hover::before, .wp-block-px-faq.is-style-default:hover::after {
+  opacity: 0.75;
+}
+.wp-block-px-faq.is-style-boxed {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+.wp-block-px-faq.is-style-always-open {
+  border-radius: 4px;
+}
+
+.wp-block-px-faq__question {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  padding: 1rem 0;
+  padding-right: 3rem;
+  line-height: 1.25;
+  font-weight: 700;
+  list-style: none;
+  user-select: none;
+  transition: all 0.25s ease-in-out;
+}
+.has-background .wp-block-px-faq__question {
+  padding: 1rem;
+}
+.is-style-boxed .wp-block-px-faq__question {
+  padding: 1rem;
+}
+.is-style-always-open .wp-block-px-faq__question {
+  pointer-events: none;
+}
+.wp-block-px-faq__question:active {
+  transform: translateY(1px);
+  transition: none;
+}
+.wp-block-px-faq__question::-webkit-details-marker {
+  display: none;
+}
+.wp-block-px-faq__question::marker {
+  display: none;
+  font-size: 0;
+}
+.wp-block-px-faq__question::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  transition: all 0.25s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  font-family: SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+  line-height: 1;
+}
+[open] .wp-block-px-faq__question::after {
+  content: "-";
+}
+.is-style-always-open .wp-block-px-faq__question::after {
+  display: none;
+}
+.wp-block-px-faq:focus-within .wp-block-px-faq__question::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.wp-block-px-faq__question:hover::after {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+div.wp-block-px-faq__answer {
+  padding: 0 0 1rem;
+  font-size: 1rem;
+  opacity: 0.75;
+}
+.is-style-boxed div.wp-block-px-faq__answer, .has-background div.wp-block-px-faq__answer {
+  padding: 0 1rem 1rem;
+}
+div.wp-block-px-faq__answer p {
+  margin: 0;
+}
+div.wp-block-px-faq__answer p + p {
+  margin-top: 1rem;
+}

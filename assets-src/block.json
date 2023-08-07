@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "px/faq",
+  "title": "FAQ with Schema",
+  "category": "layout",
+  "icon": "list-view",
+  "description": "Question with expandable answer",
+  "keywords": [ "faq", "question", "accordion", "answer", "toggle" ],
+  "version": "1.0.0",
+  "textdomain": "px",
+  "attributes": {
+    "question": {
+      "type": "string",
+      "source": "html",
+      "selector": "summary"
+    },
+    "answer": {
+      "type": "string",
+      "source": "html",
+      "selector": "div"
+    },
+    "initiallyOpen": {
+      "type": "boolean",
+      "default": false,
+      "source": "attribute",
+      "selector": "details",
+      "attribute": "open"
+    },
+    "noIndex": {
+      "type": "boolean",
+      "default": false,
+      "source": "attribute",
+      "selector": "details",
+      "attribute": "data-no-schema"
+    }
+  },
+  "supports": {
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": [ "top", "bottom" ]
+    }
+  },
+  "styles": [
+    { "name": "default", "label": "Default", "isDefault": true },
+    { "name": "boxed", "label": "Boxed" },
+    { "name": "always-open", "label": "Always Open" }
+  ],
+  "example": {},
+  "variations": [],
+  "editorScript": "px-faq",
+  "editorStyle": "px-faq",
+  "style": "px-faq-public"
+}
