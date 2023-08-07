@@ -1,9 +1,8 @@
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { RichText, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 export default function save(props) {
   const {
     question,
-    answer,
     initiallyOpen,
     noIndex,
   } = props.attributes;
@@ -32,11 +31,9 @@ export default function save(props) {
         className="wp-block-px-faq__question"
         value={question}
       />
-      <RichText.Content
-        tagName="div"
-        className="wp-block-px-faq__answer"
-        value={answer}
-      />
+      <div className="wp-block-px-faq__answer">
+        <InnerBlocks.Content />
+      </div>
     </details>
   );
 }

@@ -109,14 +109,15 @@
 div.wp-block-px-faq__answer
   padding: 0 0 1rem
   font-size: 1rem
-  opacity: .75
 
   .is-style-boxed &,
   .has-background &
     padding: 0 1rem 1rem
 
-  p
+  p,
+  li
+    opacity: .75
+  > *
     margin: 0
-
-  p + p
+  > * + *
     margin-top: 1rem

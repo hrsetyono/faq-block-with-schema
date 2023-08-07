@@ -2,6 +2,7 @@ import {
   useBlockProps,
   RichText,
   InspectorControls,
+  InnerBlocks,
 } from '@wordpress/block-editor';
 import {
   ToggleControl,
@@ -49,7 +50,7 @@ export default function edit(props) {
           tagName="div"
           className="wp-block-px-faq__question"
           value={atts.question}
-          placeholder="Enter the Question…"
+          placeholder="Write the Question…"
           onChange={(value) => {
             props.setAttributes({ question: value });
           }}
@@ -63,17 +64,14 @@ export default function edit(props) {
             }}
           />
         )}
-
-        <RichText
-          tagName="div"
-          className="wp-block-px-faq__answer"
-          value={atts.answer}
-          multiline="p"
-          placeholder="Enter the Answer…"
-          onChange={(value) => {
-            props.setAttributes({ answer: value });
-          }}
-        />
+        <div className="wp-block-px-faq__answer">
+          <InnerBlocks
+            allowedBlocks={['core/paragraph', 'core/list', 'core/image']}
+            template={[
+              ['core/paragraph', { placeholder: 'Write the Answer…' }],
+            ]}
+          />
+        </div>
       </div>
     </>
   );
