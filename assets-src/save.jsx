@@ -22,6 +22,7 @@ export default function save(props) {
 
   if (blockProps.className.match(/is-style-always-open/)) {
     blockProps.open = true;
+    blockProps.tabindex = '-1';
   }
 
   return (
